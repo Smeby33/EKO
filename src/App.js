@@ -33,7 +33,7 @@ function App() {
     if (userEmail) {
       const fetchHouseholds = async () => {
         try {
-          const response = await axios.get("http://localhost:5000/households/houseuser", {
+          const response = await axios.get("https://eko-bak.onrender.com/households/houseuser", {
             params: { uid: userEmail }
           });
           setHouseholds(response.data);

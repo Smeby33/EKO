@@ -12,7 +12,7 @@ export default function DeviceDetails() {
   useEffect(() => {
     const fetchDeviceData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/devices/oneapp/${deviceId}`);
+        const response = await axios.get(`https://eko-bak.onrender.com/devices/oneapp/${deviceId}`);
         setDeviceData(response.data);
       } catch (err) {
         console.error("Erreur lors de la récupération des données de l'appareil :", err);

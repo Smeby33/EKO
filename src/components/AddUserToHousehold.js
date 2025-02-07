@@ -18,7 +18,7 @@
         if (query.length < 3) return; // Ne pas chercher si moins de 3 caractères
 
         try {
-        const response = await axios.get(`http://localhost:5000/users/search?q=${query}`);
+        const response = await axios.get(`https://eko-bak.onrender.com/users/search?q=${query}`);
         setUsers(response.data);
         } catch (err) {
         console.error("Erreur de recherche :", err);
@@ -45,7 +45,7 @@
         setSuccess("");
 
         try {
-        const response = await axios.post(`http://localhost:5000/households/add1/${householdId}/users`, {
+        const response = await axios.post(`https://eko-bak.onrender.com/households/add1/${householdId}/users`, {
             userId: selectedUser.id,
             role: role,
         });

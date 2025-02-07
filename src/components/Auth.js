@@ -28,7 +28,7 @@ const Auth = () => {
         userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
-        const response = await fetch("http://localhost:5000/users/register", {
+        const response = await fetch("https://eko-bak.onrender.com/users/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ uid: user.uid, email: user.email, name }),

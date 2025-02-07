@@ -23,7 +23,7 @@ export default function AddHousehold({ onAdd }) {
     if (userEmail) {
       const fetchHouseholds = async () => {
         try {
-          const response = await axios.get("http://localhost:5000/households/houseuser", {
+          const response = await axios.get("https://eko-bak.onrender.com/households/houseuser", {
             params: { uid: userEmail} // Envoi de l'email comme paramètre de la requête
           });
           setHouseholds(response.data); // Stocke les foyers dans l'état
@@ -46,7 +46,7 @@ export default function AddHousehold({ onAdd }) {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/households", {
+      const res = await axios.post("https://eko-bak.onrender.com/households", {
         name,
         uid: userEmail, // Utilise l'email de l'utilisateur comme uid
       });

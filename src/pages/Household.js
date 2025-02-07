@@ -25,7 +25,7 @@ export default function Household() {
 
 const fetchUsers = async () => {
   try {
-    const response = await axios.get(`http://localhost:5000/households/add/${id}/users`);
+    const response = await axios.get(`https://eko-bak.onrender.com/households/add/${id}/users`);
     setUsers(response.data);
   } catch (err) {
     console.error("Erreur lors de la récupération des utilisateurs :", err);
@@ -33,7 +33,7 @@ const fetchUsers = async () => {
 };
 const fetchMembers = async () => {
   try {
-    const response = await axios.get(`http://localhost:5000/households/viewadd1/${id}/users`);
+    const response = await axios.get(`https://eko-bak.onrender.com/households/viewadd1/${id}/users`);
     setMembers(response.data);
   } catch (error) {
     console.error("Erreur lors de la récupération des membres :", error);
@@ -50,7 +50,7 @@ useEffect(() => {
    
     const fetchDevices = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/devices/${id}`);
+        const response = await axios.get(`https://eko-bak.onrender.com/devices/${id}`);
         setDevices(response.data);
       } catch (err) {                
         console.error("Erreur lors de la récupération des appareils :", err);
@@ -69,7 +69,7 @@ useEffect(() => {
 
       try {
         // Appel à l'API pour récupérer les données totalisées par date
-        const response = await axios.get(`http://localhost:5000/consumption/consumption/${id}`);
+        const response = await axios.get(`https://eko-bak.onrender.com/consumption/consumption/${id}`);
         console.log("Données de consommation récupérées :", response.data); // Debugging
         setConsumptionData(response.data); // Mettre à jour l'état avec les données récupérées
         setError(""); // Réinitialiser les erreurs
@@ -86,7 +86,7 @@ useEffect(() => {
 
   // ⚡ Fonction pour allumer / éteindre un appareil
   const toggleDevice = (deviceId) => {
-    axios.put(`http://localhost:5000/devices/toggle/${deviceId}`)
+    axios.put(`https://eko-bak.onrender.com/devices/toggle/${deviceId}`)
       .then(res => {
         setDevices((prevDevices) =>
           prevDevices.map((d) =>
@@ -113,7 +113,7 @@ useEffect(() => {
 
   // ⚡ Fonction pour supprimer un appareil
   const deleteDevice = (deviceId) => {
-    axios.delete(`http://localhost:5000/devices/${deviceId}`)
+    axios.delete(`https://eko-bak.onrender.com/devices/${deviceId}`)
       .then(() => {
         setDevices((prevDevices) => prevDevices.filter(d => d.id !== deviceId));
       })
