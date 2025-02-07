@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { FaHome, FaUsers, FaSignInAlt } from "react-icons/fa";
 
 export default function Navbar({ userEmail, households }) {
+  const logo = "/ako.png";
   const links = [
     { path: "/home", icon: <FaHome />, label: "Accueil" },
     households.length > 0 && { path: `/household/${households[0].id}`, icon: <FaUsers />, label: "Mon foyer" },
@@ -10,6 +11,10 @@ export default function Navbar({ userEmail, households }) {
 
   return (
     <nav className="flex justify-center space-x-4 bg-blue-500 p-3 shadow-lg transition-all duration-500">
+       <div className="navi" >
+       <img src={logo} alt="Logo" className="h-10 w-1 object-contain" id="logo" />
+
+     
       <div className="btnhom">
         {links.map(({ path, icon, label }) => (
           <NavLink
@@ -25,6 +30,7 @@ export default function Navbar({ userEmail, households }) {
             {icon} <span>{label}</span>
           </NavLink>
         ))}
+      </div>
       </div>
     </nav>
   );

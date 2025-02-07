@@ -123,6 +123,16 @@
     justify-content: center;
     margin: auto;
   }
+  #logo{
+    border-radius: 50px;
+    border: 1px;
+  }
+  .navi{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   
   @media (max-width: 767px) {
     h1 {
