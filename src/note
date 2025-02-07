@@ -1,0 +1,61 @@
+CREATE DATABASE IF NOT EXISTS energy_tracker;
+USE energy_tracker;
+
+-- Table des utilisateurs
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'user') DEFAULT 'user',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Table des foyers (ménages ou entreprises)
+CREATE TABLE households (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Relation entre utilisateurs et foyers
+CREATE TABLE user_households (
+    user_id INT,
+    household_id INT,
+    role ENUM('owner', 'member') DEFAULT 'member',
+    PRIMARY KEY (user_id, household_id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (household_id) REFERENCES households(id) ON DELETE CASCADE
+);
+
+-- Table des appareils électriques
+CREATE TABLE devices (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    household_id INT,
+    name VARCHAR(100) NOT NULL,
+    power FLOAT NOT NULL, -- en watts
+    is_on BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (household_id) REFERENCES households(id) ON DELETE CASCADE
+);
+
+-- Table du suivi de consommation
+CREATE TABLE consumptions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    device_id INT,
+    date DATE NOT NULL,
+    hours_on FLOAT DEFAULT 0, -- Nombre d'heures allumé
+    consumption FLOAT DEFAULT 0, -- Consommation en kWh
+    FOREIGN KEY (device_id) REFERENCES devices(id) ON DELETE CASCADE
+);
+
+-- Table des alertes et notifications
+CREATE TABLE alerts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    household_id INT,
+    type ENUM('limit_exceeded', 'reminder', 'tip') NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status ENUM('unread', 'read') DEFAULT 'unread',
+    FOREIGN KEY (household_id) REFERENCES households(id) ON DELETE CASCADE
+);

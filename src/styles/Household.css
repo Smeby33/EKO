@@ -1,0 +1,187 @@
+/* Couleurs inspirées de l'énergie et de l'économie */
+:root {
+    --green-energy: #28a745;
+    --blue-economy: #007bff;
+    --light-gray: #f8f9fa;
+    --dark-gray: #343a40;
+    --warning-red: #dc3545;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+}
+
+#container-household {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#title {
+    font-size: 2rem;
+    color: var(--blue-economy);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#device-list {
+    list-style: none;
+    padding: 0;
+}
+
+#device-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#device-item:hover {
+    background-color: #e3f2fd;
+}
+
+#device-actions button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#toggle-btn {
+    background-color: var(--blue-economy);
+    color: white;
+    margin-right: 8px;
+}
+
+#toggle-btn:hover {
+    background-color: #0056b3;
+}
+
+#delete-btn {
+    background-color: var(--warning-red);
+    color: white;
+}
+
+#delete-btn:hover {
+    background-color: #c82333;
+}
+
+#device-link {
+    color: var(--blue-economy);
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+#device-link:hover {
+    text-decoration: underline;
+}
+
+#members-section {
+    margin-top: 30px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#members-title {
+    font-size: 1.5rem;
+    color: var(--blue-economy);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#members-list {
+    list-style: none;
+    padding: 0;
+    
+}
+
+#member-item {
+    padding: 10px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+#chart-container {
+    margin-top: 30px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#alert-danger {
+    background-color: var(--warning-red);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#btnapa{
+    font-size: 11px;
+    color: black;
+    text-decoration: none;
+    background: none;
+    border: none;
+}
+#btnap{
+    font-size: 13px;
+    color: rgb(200, 197, 15);
+    text-decoration: none;
+    background: none;
+    border: none;
+}
+
+#btnap:focus {
+    font-size: 11px;
+    color: rgb(220, 106, 40);
+    text-decoration: none;
+    background: none;
+    border: none;
+}
+#btnapa:focus {
+    font-size: 11px;
+    color: rgb(220, 106, 40);
+    text-decoration: none;
+    background: none;
+    border: none;
+}
+
+.btnsapp{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+@media (max-width: 767px) {
+    #title {
+        font-size: 1.5rem;
+    }
+    
+    #container-household {
+        padding: 10px;
+    }
+    
+    #device-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #device-actions {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

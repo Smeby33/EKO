@@ -1,0 +1,140 @@
+/* Couleurs inspirées de l'énergie et de l'économie */
+:root {
+    --green-energy: #28a745; /* Vert énergie */
+    --blue-economy: #007bff; /* Bleu économie */
+    --light-gray: #f8f9fa; /* Gris clair */
+    --dark-gray: #343a40; /* Gris foncé pour le texte */
+    --warning-red: #dc3545; /* Rouge pour les alertes */
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+  }
+
+  #containerhome{
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: var(--blue-economy);
+    font-weight: bold;
+  }
+  
+  .alert-danger {
+    background-color: var(--warning-red);
+    color: white;
+    font-weight: bold;
+  }
+  
+  ul {
+    padding-left: 0;
+  }
+  
+  #foyer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgba(6, 113, 245, 0.683) ;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  #foyer:hover {
+    background-color: #5ea6ee; /* Couleur de fond au survol */
+  }
+  
+  .text-decoration-none {
+    text-decoration: none;
+  }
+  
+  .text-dark {
+    color: var(--dark-gray);
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .text-dark:hover {
+    color: var(--blue-economy); /* Changement de couleur au survol */
+  }
+  
+  .me-2 {
+    margin-right: 10px;
+  }
+  
+  .add-household-btn {
+    background-color: var(--green-energy);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-household-btn:hover {
+    background-color: #218838; /* Changement de couleur pour le bouton */
+  }
+  .btnhome{
+    display: flex;
+    justify-content: right;
+    padding: 10px;
+  }
+
+  .btnhom{
+    display: flex;
+    justify-content: right;
+    padding: 0px;
+  }
+  
+
+  .btnhome button {
+   font-size: 11px;
+  }
+  #linkhome{
+    width: 100%;
+  }
+
+  #forme{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content:space-around;
+    height: 50vh;
+    width:80vw ;
+  }
+  .formeparent{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+  }
+  
+  @media (max-width: 767px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    .container {
+      padding: 10px;
+    }
+    
+    .li {
+      padding: 10px;
+    }
+  }
+  

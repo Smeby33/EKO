@@ -1,0 +1,105 @@
+/* src/styles/AddHousehold.css */
+
+/* Conteneur principal */
+.add-household-container {
+    background: #f8f9fa; /* Fond gris clair */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+  }
+  
+  /* Formulaire */
+  .add-household-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Champ de saisie */
+  .add-household-input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    width: 100%;
+  }
+  
+  .add-household-input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Bouton Ajouter */
+  .add-household-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-household-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Liste des foyers */
+  .household-list {
+    margin-top: 20px;
+  }
+  
+  .household-item {
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .household-item a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .household-item a:hover {
+    color: #0056b3;
+  }
+  
+  /* Message d'erreur */
+  .error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Responsive pour iPhone XS (375px de large) */
+  @media screen and (max-width: 375px) {
+    .add-household-container {
+      padding: 15px;
+      max-width: 90%;
+    }
+  
+    .add-household-input,
+    .add-household-button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .household-item {
+      flex-direction: column;
+      text-align: center;
+      padding: 8px;
+    }
+  }
+  
